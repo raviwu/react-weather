@@ -1,3 +1,8 @@
+const webpack = require('webpack');
+const envToBeInjected = {
+  OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY
+};
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -22,5 +27,10 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(envToBeInjected)
+    })
+  ]
 };
