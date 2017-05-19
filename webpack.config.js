@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 const envToBeInjected = {
   OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY,
-  NODE_ENV: process.env.NODE_ENV || 'development'
+  NODE_ENV: process.env.NODE_ENV
 };
 
 module.exports = {
@@ -35,23 +35,9 @@ module.exports = {
     contentBase: './'
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(envToBeInjected)
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        screw_ie8: true
-      },
-      comments: false
-    })
+    new webpack.optimize.UglifyJsPlugin()
   ]
 };
