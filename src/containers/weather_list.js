@@ -12,9 +12,9 @@ class WeatherList extends Component {
     return (
       <tr key={name}>
         <td>{name}</td>
-        <td><Chart data={temps} color='orange' /></td>
-        <td><Chart data={pressures} color='red' /></td>
-        <td><Chart data={humidities} color='blue' /></td>
+        <td><Chart data={temps} color='orange' units="°C" /></td>
+        <td><Chart data={pressures} color='green' units="hPa" /></td>
+        <td><Chart data={humidities} color='grey' units="%" /></td>
       </tr>
     );
   }
@@ -25,9 +25,9 @@ class WeatherList extends Component {
         <thead>
           <tr>
             <th>城市</th>
-            <th>溫度</th>
-            <th>氣壓</th>
-            <th>濕度</th>
+            <th>溫度（°C）</th>
+            <th>氣壓（hPa）</th>
+            <th>濕度（%）</th>
           </tr>
         </thead>
 
