@@ -1,6 +1,8 @@
 const webpack = require('webpack');
+
 const envToBeInjected = {
-  OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY
+  OPEN_WEATHER_API_KEY: process.env.OPEN_WEATHER_API_KEY,
+  NODE_ENV: process.env.NODE_ENV || 'development'
 };
 
 module.exports = {
@@ -13,13 +15,17 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          cacheDirectory: true,
+          presets: ['react', 'es2015', 'stage-1']
+        }
       }
-    }]
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']

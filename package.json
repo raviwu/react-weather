@@ -1,9 +1,9 @@
 {
-  "name": "redux-simple-starter",
+  "name": "tw-weather",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Simple weather App to check TW weather",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "repository": "git@github.com:raviwu/react-weather.git",
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
@@ -29,7 +29,13 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "babel": "^6.23.0",
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
     "babel-preset-stage-1": "^6.1.18",
+    "express": "^4.15.3",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -37,6 +43,7 @@
     "react-router": "^2.0.1",
     "react-sparklines": "^1.6.0",
     "redux": "^3.0.4",
-    "redux-promise": "^0.5.3"
+    "redux-promise": "^0.5.3",
+    "webpack": "^1.15.0"
   }
 }
