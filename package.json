@@ -1,6 +1,6 @@
 {
   "name": "tw-weather",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple weather App to check TW weather",
   "main": "index.js",
   "repository": "git@github.com:raviwu/react-weather.git",
